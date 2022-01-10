@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "contentful": "^9.1.5",
     "firebase": "^9.6.2",
     "next": "latest",
     "next-pwa": "^5.4.1",
