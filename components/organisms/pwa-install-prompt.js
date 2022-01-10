@@ -1,9 +1,10 @@
-import { useAddToHomescreenPrompt } from "../../utils/pwa/add-to-homescreen";
+import { useBeforeInstallPromptEvent } from "../../utils/pwa/before-install-prompt-event";
 import { useState, useEffect } from "react";
 import PopupModalPrompt from "../molecules/modals/popup-modal-prompt";
+import { installDirectionMessage } from "../../utils/pwa/install-direction-message";
 
 export function PWAInstallPrompt(props) {
-  const [prompt, promptToInstall] = useAddToHomescreenPrompt();
+  const [prompt, promptToInstall] = useBeforeInstallPromptEvent();
   const [isVisible, setVisibleState] = useState(false);
 
   const hide = () => setVisibleState(false);

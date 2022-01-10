@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function useAddToHomescreenPrompt(){
+export function useBeforeInstallPromptEvent(){
   const [prompt, setState] = useState(null);
 
   const promptToInstall = () => {
