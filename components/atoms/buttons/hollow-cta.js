@@ -1,4 +1,4 @@
-export default function FullWidthCTAButton(props) {
+export default function HollowCTAButton(props) {
     return (
       <button className="font-opensans font-bold" onClick={props.clicked}>
         {props.text}

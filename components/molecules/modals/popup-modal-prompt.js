@@ -1,4 +1,4 @@
-import FullWidthCTA from "../../atoms/buttons/full-width-cta";
+import FullWidthCTAButton from "../../atoms/buttons/full-width-cta";
 
 export default function PopupModalPrompt(props) {
   return (
@@ -9,7 +9,7 @@ export default function PopupModalPrompt(props) {
       </div>
       <h3>{props.title}</h3>
       <p>{props.text}</p>
-      <FullWidthCTA text={props.ctatext} clicked={props.promptToInstall}  />
+      <FullWidthCTAButton text={props.ctatext} clicked={props.promptToInstall}  />
     </div>
   );
 }
