@@ -7,6 +7,7 @@ import FileIcon from "../atoms/icons/file";
 import InstitutionIcon from "../atoms/icons/institution";
 import LocationPinIcon from "../atoms/icons/location-pin";
 import CheckedClipboardIcon from "../atoms/icons/checked-clipboard";
+import RichText from "../molecules/rich-text-render";
 
 export function PostUI(props) {
   const highlights = [
@@ -42,8 +43,7 @@ export function PostUI(props) {
         href={"https://" + props.post.link}
         target="_blank"
       />
-      <p>Rich Text Description here</p>
-      {/* <p>{props.post.description}</p> */}
+      <RichText richText={props.post.description} moleculeStyle={"text-center"} />
       <div>{props.post.tags}</div>
     </div>
   );

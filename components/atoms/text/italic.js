@@ -1,0 +1,1 @@
+export const Italic = ({ children }) => <span className="italic">{children}</span>;

@@ -1,0 +1,1 @@
+export const Bold = ({ children }) => <span className="font-bold">{children}</span>;

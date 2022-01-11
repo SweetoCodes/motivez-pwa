@@ -7,6 +7,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.11.1",
     "contentful": "^9.1.5",
     "firebase": "^9.6.2",
     "globby": "^12.0.2",
