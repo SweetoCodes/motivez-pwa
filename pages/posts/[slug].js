@@ -1,18 +1,17 @@
 import { createClient } from "contentful";
 import SEO from "../../components/global/SEO";
 import { PostUI } from "../../components/organisms/post-ui";
-import Image from "next/image";
 
 export default function Post({ post }) {
   return (
     <div>
-      {/* <SEO
+      <SEO
         title={"Motivez: " + post.fields.title}
         description={post.fields.title}
         keywords={"" + post.fields.tags.join(", ")}
-        imagePreview={"https:" + post.fields.image.fields.file.url}
-      /> */}
-      <PostUI organismContainer="max-w-xl mx-auto" post={post.fields}/>
+        imagePreview={"https:" + post.fields.thumbnail.fields.file.url}
+      />
+      <PostUI organismContainer="max-w-xl mx-auto px-4 w-full" post={post.fields}/>
     </div>
   );
 }

@@ -32,18 +32,18 @@ export function PostUI(props) {
 
   return (
     <div className={props.organismContainer + " space-y-8"}>
-      <h1 className="text-4xl font-bold text-center font-opensans">
+      <h1 className="text-4xl font-bold font-opensans">
         {props.post.title}
       </h1>
       <TableMeetingSVG style={" "} />
-      <TagStrip moleculeStyle="" highlights={highlights} />
+      <TagStrip moleculeStyle="flex sm:flex-row flex-col sm:flex-wrap" highlights={highlights} />
       <CTAButton
         text="Apply Now"
-        style=" mx-auto"
+        style=" "
         href={"https://" + props.post.link}
         target="_blank"
       />
-      <RichText richText={props.post.description} moleculeStyle={"text-center"} />
+      <RichText richText={props.post.description} moleculeStyle={""} />
       <div>{props.post.tags}</div>
     </div>
   );
