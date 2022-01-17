@@ -1,6 +1,10 @@
 import { createClient } from "contentful";
 import Image from "next/image";
 
+export default function Posts({ posts }) {
+  return <div className="">Posts</div>;
+}
+
 export async function getStaticProps() {
   const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -16,6 +20,3 @@ export async function getStaticProps() {
   };
 }
 
-export default function Posts({ posts }) {
-  return <div className="">Posts</div>;
-}

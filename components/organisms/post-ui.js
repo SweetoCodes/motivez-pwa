@@ -1,5 +1,5 @@
 import TableMeetingSVG from "../atoms/assets/table-meeting-svg";
-import TagStrip from "../molecules/tag-strip";
+import IconTextTagStrip from "../molecules/tag-strips/icon-text-tag-strip";
 import CTAButton from "../atoms/buttons/cta";
 import { formatDate } from "../../utils/helpers/helpers";
 import CalendarIcon from "../atoms/icons/calendar";
@@ -8,6 +8,7 @@ import InstitutionIcon from "../atoms/icons/institution";
 import LocationPinIcon from "../atoms/icons/location-pin";
 import CheckedClipboardIcon from "../atoms/icons/checked-clipboard";
 import RichText from "../molecules/rich-text-render";
+import TextTagStrip from "../molecules/tag-strips/text-tag-strip";
 
 export function PostUI(props) {
   const highlights = [
@@ -36,7 +37,7 @@ export function PostUI(props) {
         {props.post.title}
       </h1>
       <TableMeetingSVG style={" "} />
-      <TagStrip moleculeStyle="flex sm:flex-row flex-col sm:flex-wrap" highlights={highlights} />
+      <IconTextTagStrip moleculeStyle="flex sm:flex-row flex-col sm:flex-wrap" highlights={highlights} />
       <CTAButton
         text="Apply Now"
         style=" "
@@ -44,7 +45,7 @@ export function PostUI(props) {
         target="_blank"
       />
       <RichText richText={props.post.description} moleculeStyle={""} />
-      <div>{props.post.tags}</div>
+      <TextTagStrip moleculeStyle="flex sm:flex-row flex-col sm:flex-wrap" tags={props.post.tags} />
     </div>
   );
 }

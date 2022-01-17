@@ -1,6 +1,6 @@
-import IconTextTag from "../atoms/tags/icon-text-tag";
+import IconTextTag from "../../atoms/tags/icon-text-tag";
 
-export default function TagStrip(props) {
+export default function IconTextTagStrip(props) {
   return (
     <div className={props.moleculeStyle}>
       {props.highlights.map((info, idx) => (
