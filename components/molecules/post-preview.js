@@ -1,10 +1,13 @@
-import Link from "next/link";
 import Image from "next/image";
 import { formatDateShort } from "../../utils/helpers/helpers";
 
 export function PostPreview(props) {
   return (
-    <Link href={"/posts/" + props.post.fields.slug}>
+    <a
+      target="_blank"
+      href={"/posts/" + props.post.fields.slug}
+      rel="noopener noreferrer"
+    >
       <div className=" cursor-pointer flex flex-row mt-4 items-center align-middle space-x-6 w-full">
         <div className="h-24 w-24 flex-none ">
           <Image
@@ -19,7 +22,9 @@ export function PostPreview(props) {
         <div className="grow space-y-1">
           <p className="font-bold text-3xl">{props.post.fields.title}</p>
           <div className="flex flex-wrap">
-            <div className="text-motivezred pr-2">{props.post.fields.employer}</div>
+            <div className="text-motivezred pr-2">
+              {props.post.fields.employer}
+            </div>
             <div>{props.post.fields.location.join(" · ")}</div>
           </div>
           <div className="sm:flex hidden">
@@ -44,6 +49,6 @@ export function PostPreview(props) {
           </p>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }
