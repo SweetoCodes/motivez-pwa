@@ -6,7 +6,7 @@ export function PostPreview(props) {
   return (
     <Link href={"/posts/" + props.post.fields.slug}>
       <div className=" cursor-pointer flex flex-row mt-4 items-center align-middle space-x-6 w-full">
-        <div className="h-20 w-20 flex-none ">
+        <div className="h-24 w-24 flex-none ">
           <Image
             src={"https:" + props.post.fields.thumbnail.fields.file.url}
             width={props.post.fields.thumbnail.fields.file.details.image.width}
@@ -17,16 +17,18 @@ export function PostPreview(props) {
           />
         </div>
         <div className="grow space-y-1">
-          <div>{props.post.fields.title}</div>
-          <div className="flex flex-row">
-            <div>{props.post.fields.employer}</div>
-            <div>{props.post.fields.location}</div>
+          <p className="font-bold text-3xl">{props.post.fields.title}</p>
+          <div className="flex flex-wrap">
+            <div className="text-motivezred pr-2">{props.post.fields.employer}</div>
+            <div>{props.post.fields.location.join(" · ")}</div>
           </div>
-          <div>{props.post.fields.previewDescription}</div>
+          <div className="sm:flex hidden">
+            {props.post.fields.previewDescription}
+          </div>
         </div>
         <div className="flex flex-none flex-col text-center">
-          <p>Deadline</p>
-          <p>
+          <p className="">Deadline</p>
+          <p className="font-bold">
             {
               formatDateShort(props.post.fields.applicationDeadline).split(
                 " "

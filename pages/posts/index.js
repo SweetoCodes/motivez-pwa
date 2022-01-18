@@ -3,7 +3,7 @@ import { PostPreviews } from "../../components/organisms/posts/post-previews";
 
 export default function Posts({ posts }) {
   return <div className="">
-    <PostPreviews posts={posts}/>
+    <PostPreviews organismContainer="mx-auto px-4" posts={posts}/>
   </div>;
 }
 
