@@ -1,6 +1,6 @@
 import { createClient } from "contentful";
 import SEO from "../../components/global/SEO";
-import { PostUI } from "../../components/organisms/post-ui";
+import { PostUI } from "../../components/organisms/posts/post-ui";
 
 export default function Post({ post }) {
   return (

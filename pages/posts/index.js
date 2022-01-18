@@ -1,8 +1,10 @@
 import { createClient } from "contentful";
-import Image from "next/image";
+import { PostPreviews } from "../../components/organisms/posts/post-previews";
 
 export default function Posts({ posts }) {
-  return <div className="">Posts</div>;
+  return <div className="">
+    <PostPreviews posts={posts}/>
+  </div>;
 }
 
 export async function getStaticProps() {
