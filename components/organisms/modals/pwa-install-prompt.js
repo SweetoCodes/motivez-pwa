@@ -1,7 +1,7 @@
-import { useBeforeInstallPromptEvent } from "../../utils/pwa/before-install-prompt-event";
+import { useBeforeInstallPromptEvent } from "../../../utils/pwa/before-install-prompt-event";
 import { useState, useEffect } from "react";
-import PopupModalPrompt from "../molecules/modals/popup-modal-prompt";
-import { installDirectionMessage } from "../../utils/pwa/install-direction-message";
+import PopupModalPrompt from "../../molecules/modals/popup-modal-prompt";
+import { installDirectionMessage } from "../../../utils/pwa/install-direction-message";
 
 export function PWAInstallPrompt(props) {
   const [prompt, promptToInstall] = useBeforeInstallPromptEvent();

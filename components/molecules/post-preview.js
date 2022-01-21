@@ -20,7 +20,7 @@ export function PostPreview(props) {
           />
         </div>
         <div className="grow space-y-1">
-          <p className="font-bold text-3xl">{props.post.fields.title}</p>
+          <p className="font-bold md:text-3xl text-lg">{props.post.fields.title}</p>
           <div className="flex flex-wrap">
             <div className="text-motivezred pr-2">
               {props.post.fields.employer}

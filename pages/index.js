@@ -1,10 +1,12 @@
 import SEO from "../components/global/SEO";
-import { PWAInstallPrompt } from "../components/organisms/pwa-install-prompt";
+import NavBar from "../components/organisms/navbar";
+import { PWAInstallPrompt } from "../components/organisms/modals/pwa-install-prompt";
 
 export default function Home() {
   return (
     <div>
       <SEO title={"Motivez"} description={"Description"} keywords={"keywords"} imagePreview={"https://charliesweeting.com/assets/profilepicture.png"} />
+      <NavBar/>
       <div className="font-opensans font-bold text-5xl">Init text</div>
       <PWAInstallPrompt
         title={"Install Motivez As An App"}
