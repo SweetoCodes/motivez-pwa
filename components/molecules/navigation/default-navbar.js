@@ -1,3 +1,5 @@
+import ProfilePictureImage from "../../atoms/icons/profile-picture-image";
+
 export default function DefaultNavBar({
   currentUser,
   extendedNav,
@@ -15,6 +17,7 @@ export default function DefaultNavBar({
       <div className="flex flex-row">
         <div>Page Nav</div>
         <div>Login/Signup - User photo</div>
+        {currentUser ? <ProfilePictureImage currentUser={currentUser} style="" /> : <div></div> }
       </div>
     </div>
   );
