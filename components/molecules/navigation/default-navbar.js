@@ -1,5 +1,7 @@
 import ProfilePictureImage from "../../atoms/icons/profile-picture-image";
 import ProfilePictureFallback from "../../atoms/icons/profile-picture-fallback";
+import TripleVerticalBar from "../../atoms/icons/triple-vertical-bar";
+import XIcon from "../../atoms/icons/x";
 import Link from "next/link";
 
 export default function DefaultNavBar({
@@ -7,6 +9,7 @@ export default function DefaultNavBar({
   extendedNav,
   scrolled,
   pageLinks,
+  showExtendedNavBar,
 }) {
   return (
     <div
@@ -21,17 +24,24 @@ export default function DefaultNavBar({
       <div className="sm:flex hidden flex-row items-center">
         <div>Page Nav</div>
         {currentUser ? (
-          currentUser.photoURL ? (
+          <Link href={"/profile"}>
+            currentUser.photoURL ? (
             <ProfilePictureImage currentUser={currentUser} style="" />
-          ) : (
-            <ProfilePictureFallback style="" />
-          )
+            ) : (
+            <ProfilePictureFallback style="" />)
+          </Link>
         ) : (
           <div>Login/Logout</div>
         )}
       </div>
-      <div className="sm:hidden flex">
-        {extendedNav ? <div>x</div> : <div>menu icon</div>}
+      <div className="sm:hidden flex cursor-pointer transform duration-500">
+        {extendedNav ? (
+          <div onClick={() => showExtendedNavBar(false)}><XIcon style={"h-6 w-6"}/></div>
+        ) : (
+          <div onClick={() => showExtendedNavBar(true)}>
+            <TripleVerticalBar style="h-6 w-6" />
+          </div>
+        )}
       </div>
     </div>
   );

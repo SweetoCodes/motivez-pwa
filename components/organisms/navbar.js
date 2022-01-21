@@ -16,6 +16,7 @@ export default function NavBar({ scrollThreshold, pageLinks }) {
         extendedNav={extendednavshown}
         scrolled={scrolled}
         pageLinks={pageLinks}
+        showExtendedNavBar={setExtendedNavShown}
       />
       {extendednavshown && <ExtendedNavBar pageLinks={""} />}
     </div>
