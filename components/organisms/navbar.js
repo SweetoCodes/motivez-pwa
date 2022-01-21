@@ -2,16 +2,22 @@ import { AuthContext } from "../../utils/contexts/auth_context";
 import { useContext, useState } from "react";
 import DefaultNavBar from "../molecules/navigation/default-navbar";
 import ExtendedNavBar from "../molecules/navigation/extended-navbar";
+import { useScrollPosition } from "../../utils/hooks/useScrollPosition";
 
-// Logged in/out, extendednacbar or not
-export default function NavBar() {
+export default function NavBar({ scrollThreshold, pageLinks }) {
   const { currentUser } = useContext(AuthContext);
   const [extendednavshown, setExtendedNavShown] = useState(false);
+  const scrolled = useScrollPosition(scrollThreshold);
 
   return (
-    <div>
-      <DefaultNavBar currentUser={currentUser} />
-      {extendednavshown && <ExtendedNavBar />}
+    <div className="sticky top-0 bg-white">
+      <DefaultNavBar
+        currentUser={currentUser}
+        extendedNav={extendednavshown}
+        scrolled={scrolled}
+        pageLinks={pageLinks}
+      />
+      {extendednavshown && <ExtendedNavBar pageLinks={""} />}
     </div>
   );
 }
