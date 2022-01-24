@@ -8,6 +8,7 @@ export default function Register() {
         image={<LaptopNotesSVG style="h-full w-full" />}
         title="Hi There!"
         secondaryText="Sign Up to Discover new opportunities with Motivez"
+        googleButtonText="Sign Up With Google"
       />
     </div>
   );
