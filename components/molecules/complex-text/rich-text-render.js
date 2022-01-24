@@ -1,11 +1,11 @@
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
-import P from "../atoms/text/p";
-import H1 from "../atoms/text/h1";
-import H2 from "../atoms/text/h2";
-import H3 from "../atoms/text/h3";
-import { Bold } from "../atoms/text/bold";
-import { Underline } from "../atoms/text/underline";
-import { Italic } from "../atoms/text/italic";
+import P from "../../atoms/text/p";
+import H1 from "../../atoms/text/h1";
+import H2 from "../../atoms/text/h2";
+import H3 from "../../atoms/text/h3";
+import { Bold } from "../../atoms/text/bold";
+import { Underline } from "../../atoms/text/underline";
+import { Italic } from "../../atoms/text/italic";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 export default function RichText(props) {

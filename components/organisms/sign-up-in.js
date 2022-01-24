@@ -7,12 +7,14 @@ export default function SignUpIn({
   title,
   secondaryText,
   googleButtonText,
+  alternateAuthOptionLink,
+  termsAndConditionsLink,
 }) {
   return (
-    <div className="flex flex-row">
-      <div className="flex flex-col space-y-2">
-        <h2>{title}</h2>
-        <p>{secondaryText}</p>
+    <div className="flex flex-row sm:max-w-5xl px-6 mx-auto space-x-[80px] mt-[100px] ">
+      <div className="flex flex-col space-y-6 sm:w-1/2 w-full ">
+        <h2 className="font-bold">{title}</h2>
+        <p className="font-bold">{secondaryText}</p>
         <SVGButton
           children={googleButtonText}
           clicked=""
@@ -21,9 +23,12 @@ export default function SignUpIn({
         />
         <TextLineDivider text="OR" />
         <div>Email Sign in</div>
-        <div>redirect/ terms and conditions</div>
+        <div className="flex flex-col space-y-1">
+          {alternateAuthOptionLink}
+          {termsAndConditionsLink}
+        </div>
       </div>
-      <div className="flex flex-col w-1/2 max-w-[500px]">{image}</div>
+      <div className="hidden sm:flex flex-col w-1/2">{image}</div>
     </div>
   );
 }

@@ -7,7 +7,7 @@ import FileIcon from "../../atoms/icons/file";
 import InstitutionIcon from "../../atoms/icons/institution";
 import LocationPinIcon from "../../atoms/icons/location-pin";
 import CheckedClipboardIcon from "../../atoms/icons/checked-clipboard";
-import RichText from "../../molecules/rich-text-render";
+import RichText from "../../molecules/complex-text/rich-text-render";
 import TextTagStrip from "../../molecules/tag-strips/text-tag-strip";
 
 export function PostUI(props) {
