@@ -8,6 +8,7 @@ export default function SignUpIn({
   title,
   secondaryText,
   googleButtonText,
+  googleSignInUp,
   alternateAuthOptionLink,
   termsAndConditionsLink,
 }) {
@@ -18,7 +19,7 @@ export default function SignUpIn({
         <p className="font-bold">{secondaryText}</p>
         <SVGButton
           children={googleButtonText}
-          clicked=""
+          clicked={googleSignInUp}
           svg={<GoogleG style="h-4 w-4" />}
           style="w-full font-bold border-black"
         />

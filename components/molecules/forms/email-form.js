@@ -1,12 +1,27 @@
 import TextInput from "../../atoms/inputs/text-input";
+import FullWidthCTAButton from "../../atoms/buttons/full-width-cta";
 import { useState } from "react";
+import {
+  emailValidation,
+  passwordValidation,
+} from "../../../utils/helpers/helpers";
 
 export default function EmailForm({ style }) {
-  const [emailError, setEmailErorr] = useState(null);
-  const [passwordError, setPasswordErorr] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+
+  const emailError = emailValidation(email);
+  const passwordError = passwordValidation(password);
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (emailError == false && passwordError == false) {
+      console.log(e);
+    }
+  };
 
   return (
-    <form className={style}>
+    <form className={style} onSubmit={handleSubmit}>
       <TextInput
         style="mb-4"
         label="Email"
@@ -14,6 +29,8 @@ export default function EmailForm({ style }) {
         id="email"
         error={emailError}
         placeholder="george@motivez.com"
+        value={email}
+        handleChange={(e) => setEmail(e.target.value)}
       />
       <TextInput
         style="mb-4"
@@ -21,7 +38,15 @@ export default function EmailForm({ style }) {
         type="password"
         id="password"
         error={passwordError}
-        placeholder="******************"
+        placeholder="***********"
+        value={password}
+        handleChange={(e) => setPassword(e.target.value)}
+      />
+      <FullWidthCTAButton
+        type="submit"
+        disabled={!(emailError == false && passwordError == false)}
+        text="Submit"
+        style=""
       />
     </form>
   );

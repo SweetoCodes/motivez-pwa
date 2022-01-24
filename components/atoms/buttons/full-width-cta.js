@@ -1,8 +1,12 @@
 export default function FullWidthCTAButton(props) {
-    return (
-      <button className="font-opensans font-bold" onClick={props.clicked}>
-        {props.text}
-      </button>
-    )
-  }
-  
+  return (
+    <button
+      className={"font-opensans font-bold " + props.style}
+      onClick={props.clicked}
+      type={props.type}
+      disabled={props.disabled}
+    >
+      {props.text}
+    </button>
+  );
+}
