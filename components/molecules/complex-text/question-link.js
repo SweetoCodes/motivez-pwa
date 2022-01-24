@@ -6,7 +6,7 @@ export default function QuestionLink({ text, linkText, link, style }) {
     <p className={style}>
       <B2 text={text}></B2>
       <Link href={link}>
-        <B2 text={linkText} style="underline font-bold" />
+        <B2 text={linkText} style="underline font-bold cursor-pointer" />
       </Link>
     </p>
   );

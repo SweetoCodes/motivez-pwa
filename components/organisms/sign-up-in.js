@@ -1,6 +1,7 @@
 import TextLineDivider from "../atoms/dividers/text-line-divider";
 import SVGButton from "../atoms/buttons/svg-button";
 import GoogleG from "../atoms/icons/google-g";
+import EmailForm from "../molecules/forms/email-form";
 
 export default function SignUpIn({
   image,
@@ -22,7 +23,7 @@ export default function SignUpIn({
           style="w-full font-bold border-black"
         />
         <TextLineDivider text="OR" />
-        <div>Email Sign in</div>
+        <EmailForm/>
         <div className="flex flex-col space-y-1">
           {alternateAuthOptionLink}
           {termsAndConditionsLink}
