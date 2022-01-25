@@ -6,7 +6,8 @@ import {
   passwordValidation,
 } from "../../../utils/helpers/helpers";
 
-export default function EmailForm({ style }) {
+export default function EmailForm({ style, handleEmailSignUp }) {
+
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
 
@@ -16,7 +17,7 @@ export default function EmailForm({ style }) {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (emailError == false && passwordError == false) {
-      console.log(e);
+      handleEmailSignUp(email, password)
     }
   };
 

@@ -11,6 +11,7 @@ export default function SignUpIn({
   googleSignInUp,
   alternateAuthOptionLink,
   termsAndConditionsLink,
+  handleEmailSignUp,
 }) {
   return (
     <div className="flex flex-row sm:max-w-5xl px-6 mx-auto space-x-[80px] mt-[100px] ">
@@ -24,7 +25,7 @@ export default function SignUpIn({
           style="w-full font-bold border-black"
         />
         <TextLineDivider text="OR" />
-        <EmailForm/>
+        <EmailForm handleEmailSignUp={handleEmailSignUp}/>
         <div className="flex flex-col space-y-1">
           {alternateAuthOptionLink}
           {termsAndConditionsLink}
