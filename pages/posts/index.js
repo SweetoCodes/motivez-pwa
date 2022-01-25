@@ -1,8 +1,10 @@
 import { createClient } from "contentful";
 import { PostPreviews } from "../../components/organisms/posts/post-previews";
+import NavBar from "../../components/organisms/navbar";
 
 export default function Posts({ posts }) {
   return <div className="">
+    <NavBar scrollThreshold={20} pageLinks={[]}/>
     <PostPreviews organismContainer="mx-auto px-4" posts={posts}/>
   </div>;
 }

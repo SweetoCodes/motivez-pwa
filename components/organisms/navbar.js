@@ -17,10 +17,10 @@ export default function NavBar({ scrollThreshold, pageLinks }) {
         scrolled={scrolled}
         pageLinks={pageLinks}
         showExtendedNavBar={setExtendedNavShown}
-        moleculeStyle="px-6"
+        moleculeStyle="px-4"
       />
       {extendednavshown && (
-        <ExtendedNavBar pageLinks={pageLinks} moleculeStyle="px-6" />
+        <ExtendedNavBar pageLinks={pageLinks} currentUser={currentUser} moleculeStyle="px-4" />
       )}
     </div>
   );

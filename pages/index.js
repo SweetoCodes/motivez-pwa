@@ -5,8 +5,8 @@ import { PWAInstallPrompt } from "../components/organisms/modals/pwa-install-pro
 export default function Home() {
   const pageLinks = [
     { text: "Motivez 1", link: "x1" },
-    { text: "Motivez 2", link: "x1" },
-    { text: "Motivez 3", link: "x1" },
+    { text: "Motivez 2", link: "x2" },
+    { text: "Motivez 3", link: "x3" },
   ];
 
   return (

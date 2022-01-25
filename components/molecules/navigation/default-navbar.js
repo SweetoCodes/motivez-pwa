@@ -12,7 +12,7 @@ export default function DefaultNavBar({
   scrolled,
   pageLinks,
   showExtendedNavBar,
-  moleculeStyle
+  moleculeStyle,
 }) {
   return (
     <div
@@ -22,24 +22,27 @@ export default function DefaultNavBar({
         moleculeStyle
       }
     >
-      <Link href={currentUser ? "/home" : "/"}>
-        <div className="uppercase font-bold cursor-pointer text-lg">Motivez</div>
+      <Link href={currentUser ? "/posts" : "/"}>
+        <div className="uppercase font-bold cursor-pointer text-lg">
+          Motivez
+        </div>
       </Link>
       <div className="md:flex hidden flex-row items-center space-x-4">
-      {pageLinks.map((info, idx) => (
-         <PageLink text={info.text} href={info.link} style="text-lg" />
-      ))}
+        {pageLinks.map((info, idx) => (
+          <PageLink text={info.text} href={info.link} style="text-lg" />
+        ))}
         {currentUser ? (
-          <Link href={"/profile"}>
+
             currentUser.photoURL ? (
-            <ProfilePictureImage currentUser={currentUser} style="" />
+              <a href={"/profile"}>
+            <ProfilePictureImage currentUser={currentUser} style="h-10 w-10" /></a>
             ) : (
-            <ProfilePictureFallback style="" />)
-          </Link>
+              <a href={"/profile"}> <ProfilePictureFallback style="h-10 w-10" /></a>)
+
         ) : (
           <div className="flex flex-row space-x-2">
-            <CTAButton text="Sign in" /> 
-            <CTAButton text="Sign Up" />
+            <CTAButton text="Sign in" href="login" />
+            <CTAButton text="Sign Up" href="register" />
           </div>
         )}
       </div>

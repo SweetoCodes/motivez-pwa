@@ -43,3 +43,18 @@ export const formatDateLong = (dateString) => {
     return false
   }
   }
+
+  export const nameValidation = ( text ) => {
+    if (text == null){
+      return null
+    }
+    if (text.length==0){
+      return "Please provide a name"
+    }
+    if (!text.includes(" ")){
+      return "You must have a space between you first and last name"
+    }
+    else{
+    return false
+  }
+  }

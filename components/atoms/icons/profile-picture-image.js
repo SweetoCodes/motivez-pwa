@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 export default function ProfilePictureImage({ currentUser, style }) {
+  console.log(currentUser.photoURL)
   return (
     <div className={style}>
       <Image

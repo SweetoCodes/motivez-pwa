@@ -12,7 +12,7 @@ export default function Register() {
       <SignUpIn
         image={<LaptopNotesSVG style="h-full w-full" />}
         title="Hi There!"
-        secondaryText="Sign Up to Discover new opportunities with Motivez"
+        secondaryText="Sign Up to discover new opportunities with Motivez"
         googleButtonText="Sign Up With Google"
         alternateAuthOptionLink={
           <QuestionLink
@@ -29,8 +29,8 @@ export default function Register() {
           />
         }
         googleSignInUp={() => googleAuthChange(router)}
-        handleEmailSignUp={(email, password) => {
-          registerWithEmailAndPassword(email, password, router);
+        handleEmailFormSubmit={(email, password) => {
+          registerWithEmailAndPassword(email, password, name, router);
         }}
       />
     </div>

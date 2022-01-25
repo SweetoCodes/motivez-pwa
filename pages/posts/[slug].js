@@ -1,5 +1,6 @@
 import { createClient } from "contentful";
 import SEO from "../../components/global/SEO";
+import NavBar from "../../components/organisms/navbar";
 import { PostUI } from "../../components/organisms/posts/post-ui";
 
 export default function Post({ post }) {
@@ -11,6 +12,7 @@ export default function Post({ post }) {
         keywords={"" + post.fields.tags.join(", ")}
         imagePreview={"https:" + post.fields.thumbnail.fields.file.url}
       />
+      <NavBar scrollThreshold={20} pageLinks={[]}/>
       <PostUI organismContainer="max-w-xl mx-auto px-4 w-full" post={post.fields}/>
     </div>
   );

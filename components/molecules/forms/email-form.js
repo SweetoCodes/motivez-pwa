@@ -6,8 +6,7 @@ import {
   passwordValidation,
 } from "../../../utils/helpers/helpers";
 
-export default function EmailForm({ style, handleEmailSignUp }) {
-
+export default function EmailForm({ style, handleEmailFormSubmit }) {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
 
@@ -15,9 +14,9 @@ export default function EmailForm({ style, handleEmailSignUp }) {
   const passwordError = passwordValidation(password);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (emailError == false && passwordError == false) {
-      handleEmailSignUp(email, password)
+      handleEmailFormSubmit(email, password);
     }
   };
 
@@ -47,7 +46,7 @@ export default function EmailForm({ style, handleEmailSignUp }) {
         type="submit"
         disabled={!(emailError == false && passwordError == false)}
         text="Submit"
-        style=""
+        style="w-full bg-motivezred text-white flex font-opensans border px-6 py-2 rounded-full hover:bg-motivezreddark "
       />
     </form>
   );
